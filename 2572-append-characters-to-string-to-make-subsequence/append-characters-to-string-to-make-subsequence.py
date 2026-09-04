@@ -1,8 +1,7 @@
 class Solution:
     def appendCharacters(self, s: str, t: str) -> int:
-        i = 0 
-        n = len(t)
+        i = 0
         for a in s:
-            if i < n and t[i] == a:
+            if i < len(t) and t[i] == a:
                 i += 1
-        return n - i
+        return len(t) - i
