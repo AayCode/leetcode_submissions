@@ -1,14 +1,27 @@
 class Solution:
+    def sumOfSquaresOfDigit(self, n):
+        sum = 0
+        while n != 0:
+            digit = n % 10
+            sum += digit ** 2
+            n = n//10
+
+        return sum
+
     def isHappy(self, n: int) -> bool:
-        seen = set()
+        slow = n
+        fast = n
 
-        while n != 1:
-            if n in seen:
+        while fast != 1:
+            slow = self.sumOfSquaresOfDigit(slow)
+            fast = self.sumOfSquaresOfDigit(self.sumOfSquaresOfDigit(fast))
+
+            if fast == 1:
+                return True
+
+            if slow == fast:
                 return False
-
-            seen.add(n)
-
-            # Sum of squares of digits
-            n = sum(int(digit) ** 2 for digit in str(n))
-
+        
         return True
+
+        
