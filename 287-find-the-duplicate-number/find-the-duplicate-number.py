@@ -9,13 +9,12 @@ class Solution:
             if slow == fast:
                 break
         
-        ptr1 = 0
-        ptr2 = fast
+        slow = 0
 
-        while ptr1 != ptr2:
-            ptr1 = nums[ptr1]
-            ptr2 = nums[ptr2]
+        while slow != fast:
+            slow = nums[slow]
+            fast = nums[fast]
         
-        return ptr1
+        return slow
 
         
