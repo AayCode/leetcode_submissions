@@ -1,7 +1,6 @@
 class Solution:
     def minSubArrayLen(self, target: int, nums: list[int]) -> int:
-        i = j = 0
-        summ = 0 # 8
+        i = summ = 0
         length = float('inf')
 
         for j in range(len(nums)):
