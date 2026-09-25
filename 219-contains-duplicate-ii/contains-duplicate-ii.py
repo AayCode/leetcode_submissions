@@ -34,10 +34,7 @@ class Solution:
             if k == 0:
                 return False
             if nums[j] in seen:
-                if j - i <= k:
-                    return True
-                seen.remove(nums[i])
-                i += 1
+                return True
             seen.add(nums[j])
 
             if j - i >= k:
