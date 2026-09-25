@@ -30,16 +30,28 @@ class Solution:
      
         # return False
 
-        for j in range(n):
-            if k == 0:
-                return False
-            if nums[j] in seen:
-                return True
-            seen.add(nums[j])
+        # for j in range(n):
+        #     if k == 0:
+        #         return False
+        #     if nums[j] in seen:
+        #         return True
+        #     seen.add(nums[j])
 
-            if j - i >= k:
-                seen.remove(nums[i])
-                i += 1
+        #     if j - i >= k:
+        #         seen.remove(nums[i])
+        #         i += 1
+
+        # return False
+
+        
+        seen = {}
+
+        for i in range(len(nums)):
+            if nums[i] in seen:
+                if i - seen[nums[i]] <= k:
+                    return True
+
+            seen[nums[i]] = i
 
         return False
 
